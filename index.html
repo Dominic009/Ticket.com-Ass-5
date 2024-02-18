@@ -38,6 +38,13 @@
             font-weight: 700;
             color: black;
         }
+
+        .seat div > div:hover{
+            background-color: #1DD100;
+            cursor: pointer;
+            scale: 110%;
+            box-shadow: 1px 2px 5px grey;
+        }
     </style>
 </head>
 <body class="raleway">
@@ -59,7 +66,7 @@
             </div>
             <!-- Right side -->
             <div>
-                <button class="btn text-[#1DD100] font-bold text-lg bg-[#1DD100]/15 outline outline-1 outline-[#1DD100]/60 px-6">Bus <img src="./images/bus-icon.png"></button>
+                <a href="#ticket-section"><button class="btn text-[#1DD100] font-bold text-lg bg-[#1DD100]/15 outline outline-1 outline-[#1DD100]/60 px-6">Bus <img src="./images/bus-icon.png"></button></a>
             </div>
         </nav>
 
@@ -154,7 +161,7 @@
 
 
         <!-- Ticket section -->
-        <section class="bg-gray-100 mt-[150px] rounded-[88px] border-b-4 border-t-4 border-t-[#1DD100] border-b-[#1DD100] py-6">
+        <section id="ticket-section" class="bg-gray-50 mt-[150px] rounded-[88px] border-b-4 border-t-4 border-t-[#1DD100] border-b-[#1DD100] py-6">
 
             <div class="text-center pt-[100px] px-[150px] mb-8 w-[90%] mx-auto">
                 <h1 class="heading text-[30px]">Ticket.com</h1>
@@ -252,61 +259,61 @@
                         </div>
         
                     <div class="flex justify-between w-[100%] gap-10 p-4">
-                        <div class="inter font-medium flex-1">
+                        <div class="seat inter font-medium flex-1">
                             <div class="flex items-center gap-4 mb-4">
                                 <p>A</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>B</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>B1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>B2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>B1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>B2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>C</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>C1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>C2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>C1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>C2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>D</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>D1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>D2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>D1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>D2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>E</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>E1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>E2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>E1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>E2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>F</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>F1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>F2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>F1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>F2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>G</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>G1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>G2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>G1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>G2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>H</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>H1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>H2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>H1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>H2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>I</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>I1</p></div>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>I2</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>I1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>I2</p></div>
                             </div>
                             <div class="flex items-center gap-4 mb-4">
                                 <p>J</p>
-                                <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>J1</p></div>
+                                <div class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>J1</p></div>
                                 <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>J2</p></div>
                             </div>
                         </div>
 
 
-                        <div class="inter font-medium w-[45%]">
+                        <div class="seat inter font-medium w-[45%]">
                             <div class="flex items-center gap-4 mb-4">
                                 <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A3</p></div>
                                 <div class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]"><p>A4</p></div>
@@ -454,6 +461,6 @@
     
 
     <!------------------------------------ JS files ------------------------------------>
-    <script></script>
+    <script src="./Scripts/Functions.js"></script>
 </body>
 </html>
