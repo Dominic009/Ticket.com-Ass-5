@@ -26,6 +26,8 @@ for (let i = 0; i < seats.length; i++){
     
     seat.addEventListener('click', function selectSeat(){
 
+
+
         let countOfSeats = parseInt(totalSeats.innerText) || 0;
 
         if(countOfSeats < 4){
@@ -33,7 +35,7 @@ for (let i = 0; i < seats.length; i++){
             countOfSeats++;
             totalSeats.innerText = countOfSeats;
         }else{
-            seat.removeEventListener('click', selectSeat())
+          return seat.removeEventListener('click', selectSeat())
         }
         
         const id = document.getElementById('Available-seats');
@@ -41,11 +43,7 @@ for (let i = 0; i < seats.length; i++){
         availableSeats--;
 
         id.innerText = availableSeats;
-
-
-
-
-        // console.log(countOfSeats);
+;
 
     })
 }
@@ -62,6 +60,10 @@ function setTextValue(elementid, value){
     const element = document.getElementById(elementid);
     element.innerText = value;
 }
+
+
+
+
 
 
 seatSelection();
