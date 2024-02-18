@@ -30,11 +30,16 @@
         .center{
             transform: translate(-50%, -50%);
         }
+        .heading{
+            font-size: x-large;
+            font-weight: 700;
+            color: black;
+        }
     </style>
 </head>
-<body class="raleway border-2 w-[90%] mx-auto">
+<body class="raleway">
     <!------------------------------------ Header ------------------------------------>
-    <header>
+    <header class="w-[90%] mx-auto">
         <nav class="flex justify-between items-center px-4 pt-8">
             <!-- Left side -->
             <div class="">
@@ -51,7 +56,7 @@
             </div>
             <!-- Right side -->
             <div>
-                <button class="btn text-[#1DD100] font-bold text-lg bg-[#1DD100]/15 outline outline-[#1DD100]/60 px-6">Bus <img src="./images/bus-icon.png"></button>
+                <button class="btn text-[#1DD100] font-bold text-lg bg-[#1DD100]/15 outline outline-1 outline-[#1DD100]/60 px-6">Bus <img src="./images/bus-icon.png"></button>
             </div>
         </nav>
 
@@ -65,7 +70,7 @@
                     <h1 class="text-white font-bold text-6xl leading-[70px] mb-3">End-to-End Travel with <br>
                     <span class="text-[#1DD100]">Ticket.com</span></h1>
                     <p class="text-white mb-6">Looking for comfortable travelling option to your destination? <br> We are here to make it even easier</p>
-                    <button class="btn bg-[#1DD100] font-bold text-xl border-none">Buy Tickets</button>
+                    <button class="btn bg-[#1DD100] font-bold text-lg border-none">Buy Tickets</button>
                 </div>
             </div>
 
@@ -102,11 +107,128 @@
             </div>
         </div>
     </header>
+
+
     <!------------------------------------ Main ------------------------------------>
-    <main></main>
+    <main class="mt-[150px]">
+        <!-- Offers section -->
+        <section class="w-[90%] mx-auto">
+            <h1 class="heading text-center text-[30px]">Best offers for you!</h1>
+
+            <!-- Discount coupons -->
+            <div class="grid grid-cols-2 gap-6 mt-[30px]">
+
+            <div  class="bg-[#FFBF0F] h-[210px] flex items-center justify-end rounded-3xl">
+                <div class="flex flex-col mr-[80px] scale-110">
+                    <h1 class="inter heading text-gray-900 font-extrabold">15% OFF</h1>
+                    <p class="inter text-gray-700 font-bold">on your next purchase</p>
+                    <p class="inter text-gray-500 text-xs">use by March 2024</p>
+                </div>
+                <div><img src="./images/cupon-devider.png" alt=""></div>
+                <div class=" w-[30%] flex flex-col items-center ">
+                    <h1 class="heading text-xl text-gray-900 font-extrabold">NEW15</h1>
+                    <p class="text-gray-500 text-sm">Coupon Code</p>
+                </div>
+            </div>
+
+
+            <div  class="bg-[#F78C9C] h-[210px] flex items-center justify-end rounded-3xl">
+                <div class="flex flex-col mr-[80px] scale-110">
+                    <h1 class="inter heading text-gray-900 font-extrabold">20% OFF</h1>
+                    <p class="inter text-gray-700 font-bold">on your next purchase</p>
+                    <p class="inter text-gray-500 text-xs">use by March 2024</p>
+                </div>
+                <div><img src="./images/cupon-devider.png" alt=""></div>
+                <div class=" w-[30%] flex flex-col items-center ">
+                    <h1 class="heading text-xl text-gray-900 font-extrabold">COUPLE20</h1>
+                    <p class="text-gray-500 text-sm">Coupon Code</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10"><button class="btn font-bold text-[#1DD100] outline outline-1 outline-[#1DD100] bg-white">See All Offers</button></div>
+        </section>
+
+
+
+        <!-- Ticket section -->
+        <section class="bg-gray-100 mt-[150px] rounded-[88px] border-b-4 border-t-4 border-t-[#1DD100] border-b-[#1DD100] py-6">
+
+            <div class="text-center pt-[100px] px-[150px] mb-8 w-[90%] mx-auto">
+                <h1 class="heading text-[30px]">Ticket.com</h1>
+                <p>Select your destination and check the prices for the tickets. Apply coupons if you have any or claim any coupons!</p>
+            </div>
+
+            <!-- Ticket -->
+            <div  class="bg-white px-5 flex items-center w-[90%] mx-auto rounded-3xl">
+
+                <!-- Left side -->
+                <div>
+
+                    <div class="flex justify-between mb-5">
+                        <div class="flex gap-3">
+                            <img class="scale-75" src="./images/bus-logo.png">
+                            <div>
+                                <h1 class="heading">Greenline Paribahan</h1>
+                                <p class="text-gray-500">Coach-009-WEB ! AC_Business</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn text-[#1DD100] font-bold text-lg bg-[#1DD100]/25 px-6"><img src="./images/seat-green.png"> 40 Seats left</button>
+                        </div>
+                    </div>
+
+                    <!-- Details section -->
+                    <div class="bg-gray-100 px-6 rounded-3xl">
+                        <!-- Route -->
+                        <div class="flex justify-between border-b-2 border-dashed border-gray-300 py-5">
+                            <h3 class="font-semibold text-gray-500 text-xl">Route</h3>
+                            <h3 class="text-black font-semibold text-xl">Dhaka - Sylhet</h3>
+                        </div>
+                        <!-- Departure -->
+                        <div class="flex justify-between border-b-2 border-dashed border-gray-300 py-5">
+                            <h3 class="font-semibold text-gray-500 text-xl">Departure Time</h3>
+                            <h3 class="text-black font-semibold text-xl">6:00 AM</h3>
+                        </div>
+                        <!-- Trip details -->
+                        <div class="flex gap-5 justify-between py-5">
+                            <div class="bg-gray-200 rounded-2xl">
+                                <h2 class="text-gray-800 font-semibold text-lg px-4 py-4">Boarding Point - Laxmipur</h2>
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl">
+                                <h2 class="text-gray-800 font-semibold text-lg px-4 py-4">Dropping Point - Bogura</h2>
+                            </div>
+                            <div class="bg-gray-200 rounded-2xl">
+                                <h2 class="text-gray-800 font-semibold text-lg px-4 py-4">Est. time - 11 hours</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div>
+                    <img src="./images/info-devider.png" alt="">
+                </div>
+
+                <!-- Right side -->
+                <div class="text-center flex flex-col items-center justify-center scale-110 ml-[50px]">
+                    <img src="./images/fare.png">
+                    <h1 class="heading">550 taka</h1>
+                    <p class="font-bold text-gray-600">Per seat</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
     <!------------------------------------ Footer ------------------------------------>
     <footer></footer>
     
+
+
     <!------------------------------------ JS files ------------------------------------>
     <script></script>
 </body>
