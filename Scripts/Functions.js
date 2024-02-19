@@ -1,20 +1,10 @@
+// Navigation bar "Bus" button is functional
+// Total seats update
+// User can not select more than 4 seats
+// Seat quantity update in billing section
+// Dynamically added seat details
+// User have to provide their details (espcially correct phone number) to be able to click the "NEXT" button
 
-
-// function selectedButton(elementClass){
-//     const divs = document.querySelectorAll(elementClass);
-
-// for (let i = 0; i < divs.length; i++){
-//     divs[i].addEventListener('click', function(){
-//         this.style.backgroundColor = '#1DD100';
-        
-//         let playerPressed = parseInt(this.innerText)
-//         const userPress = playerPressed + 1;
-//         console.log(typeof userPress, userPress)
-//     })
-//  }
-// }
-
-// selectedButton('.selected');
 
 function seatSelection(){
 const seats = document.querySelectorAll('.selected');
@@ -43,14 +33,11 @@ for (let i = 0; i < seats.length; i++){
         availableSeats--;
 
         id.innerText = availableSeats;
-
-
-        
-         
-
     })
 }
 }
+
+
 
 function getInnerText(elementid){
     const text = document.getElementById(elementid).innerText;
@@ -72,11 +59,14 @@ function getClassInnerText(elementTag){
 
 
 
-// setTextValue('seat-number', "Select Seat")
 
 seatSelection();
 setTextValue('total-seats', 0);
-
+setTextValue('seat-number', 'Select Seat');
+setTextValue('class', '--');
+setTextValue('price', '--');
+setTextValue('total-price', 0);
+setTextValue('grand-total', 0);
 
 
 
@@ -100,20 +90,28 @@ const button = document.getElementById('next-button');
 
 function validateNumber(number){
     let phoneRegex = /^\d{11}$/;
+   return phoneRegex.test(number)
 
-
+}
 
     inputNumber.addEventListener('input', function(){
         let phoneNumber = inputNumber.value;
-        const isValidNumber = validateNumber(number);
+        const isValidNumber = validateNumber(phoneNumber);
 
         if(isValidNumber){
-            button.disabled = false;
+            button.removeAttribute('disabled');
         }else{
-            button.disabled = true;
+            button.setAttribute('disabled', 'disabled');
         }
 
     })
+
+
+validateNumber()
+
+
+function removeClass(elementid, value){
+    const element = document.getElementById(elementid);
+    element.classList.remove(value);
 }
 
-validateNumber(inputNumber)
