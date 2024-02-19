@@ -14,10 +14,22 @@ const totalSeats = document.getElementById('total-seats');
 for (let i = 0; i < seats.length; i++){
     let seat = seats[i];
     
-    seat.addEventListener('click', function selectSeat(){
+    seat.addEventListener('click', function selectSeat(e){
+
+        const text = e.target.parentNode.childNodes[1].innerText;
+        const selectedContainer = document.getElementById('seat-number-container');
+        selectedContainer.innerText = text;
+
 
         let countOfSeats = parseInt(totalSeats.innerText) || 0;
 
+        const id = document.getElementById('Available-seats');
+        let availableSeats = getInnerText('Available-seats');
+        availableSeats--;
+
+        id.innerText = availableSeats;
+
+        
         if(countOfSeats < 4){
             seat.style.backgroundColor = '#1DD100';
             countOfSeats++;
@@ -28,11 +40,6 @@ for (let i = 0; i < seats.length; i++){
           return seat.removeEventListener('click', selectSeat);
         }
         
-        const id = document.getElementById('Available-seats');
-        let availableSeats = getInnerText('Available-seats');
-        availableSeats--;
-
-        id.innerText = availableSeats;
     })
 }
 }
@@ -58,23 +65,9 @@ function getClassInnerText(elementTag){
 
 
 
-
-
-seatSelection();
-setTextValue('total-seats', 0);
-setTextValue('seat-number', 'Select Seat');
-setTextValue('class', '--');
-setTextValue('price', '--');
-setTextValue('total-price', 0);
-setTextValue('grand-total', 0);
-
-
-
 function getQuery(element, elementTag){
    const get = element.querySelector(elementTag).innerText;
-   console.log(get)
-
-           
+   
    const getSeatNumber = document.getElementById('seat-number');
    const text = getSeatNumber.innerText;
    console.log(text)
@@ -107,11 +100,14 @@ function validateNumber(number){
     })
 
 
-validateNumber()
+    function removeClass(elementid, value){
+        const element = document.getElementById(elementid);
+        element.classList.remove(value);
+    };
 
 
-function removeClass(elementid, value){
-    const element = document.getElementById(elementid);
-    element.classList.remove(value);
-}
-
+validateNumber();
+seatSelection();
+setTextValue('total-seats', 0);
+setTextValue('total-price', 0);
+setTextValue('grand-total', 0);
