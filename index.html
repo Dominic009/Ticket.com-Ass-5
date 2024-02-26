@@ -44,11 +44,14 @@
             color: black;
         }
 
-        .seat div>div:hover {
+        .seat div>button:hover {
             background-color: #1DD100;
             cursor: pointer;
             scale: 110%;
             box-shadow: 1px 2px 5px grey;
+        }
+        .border{
+            border: solid 2px black;
         }
     </style>
 </head>
@@ -141,8 +144,9 @@
             <!-- Discount coupons -->
             <div class="grid grid-cols-2 gap-6 mt-[30px]">
 
+                <!-- Coupon 1 -->
                 <div class="bg-[#FFBF0F] h-[210px] flex items-center justify-end rounded-3xl">
-                    <div class="flex flex-col mr-[80px] scale-110">
+                    <div class="flex flex-col mr-[80px] scale-110 w-[40%]">
                         <h1 class="inter heading text-gray-900 font-extrabold">15% OFF</h1>
                         <p class="inter text-gray-700 font-bold">on your next purchase</p>
                         <p class="inter text-gray-500 text-xs">use by March 2024</p>
@@ -154,9 +158,9 @@
                     </div>
                 </div>
 
-
+                    <!-- Coupon 2 -->
                 <div class="bg-[#F78C9C] h-[210px] flex items-center justify-end rounded-3xl">
-                    <div class="flex flex-col mr-[80px] scale-110">
+                    <div class="flex flex-col mr-[80px] scale-110 w-[40%]">
                         <h1 class="inter heading text-gray-900 font-extrabold">20% OFF</h1>
                         <p class="inter text-gray-700 font-bold">on your next purchase</p>
                         <p class="inter text-gray-500 text-xs">use by March 2024</p>
@@ -186,10 +190,10 @@
             </div>
 
             <!-- Ticket -->
-            <div class="bg-white px-5 flex items-center w-[90%] mx-auto rounded-3xl">
+            <div class="bg-white flex justify-evenly items-center w-[90%] mx-auto rounded-3xl">
 
                 <!-- Left side -->
-                <div>
+                <div class>
 
                     <div class="flex justify-between mb-5 items-center">
                         <div class="flex gap-3">
@@ -239,9 +243,9 @@
                 </div>
 
                 <!-- Right side -->
-                <div class="text-center flex flex-col items-center justify-center scale-110 ml-[50px]">
+                <div class="text-center flex flex-col items-center justify-center w-[15%] ">
                     <img src="./images/fare.png">
-                    <h1 class="heading">550 taka</h1>
+                    <h1 class="heading text-3xl">550 taka</h1>
                     <p class="font-bold text-gray-600">Per seat</p>
                 </div>
 
@@ -257,9 +261,9 @@
             <section class="bg-white mt-[100px] rounded-3xl w-[90%] mx-auto px-5 py-6">
                 <h1 class="text-center heading mb-6">Select your seat</h1>
 
-                <div class="flex gap-10">
+                <div class="flex flex-col md:flex-row gap-10">
                     <!-- Left side -->
-                    <div class="w-[60%]">
+                    <div class="w-[100%] md:w-[60%] px-5">
                         <div class="flex justify-between border-b-2 border-dashed border-gray-300 border-t-2 py-4">
                             <div class="flex gap-3 items-center">
                                 <img src="./images/seat-gray.png" alt="">
@@ -281,228 +285,228 @@
                             <div class="seat inter font-medium flex-1">
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>A</p>
-                                    <div
-                                        class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
+                                    <button
+                                        class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]" >
                                         <p>A1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>A2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>B</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>B1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>B2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>C</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>C1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>C2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>D</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>D1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>D2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>E</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>E1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>E2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>F</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>F1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>F2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>G</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>G1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>G2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>H</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>H1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>H2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>I</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>I1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>I2</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <p>J</p>
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>J1</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>J2</p>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
 
 
                             <div class="seat inter font-medium w-[45%]">
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>A3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>A4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>B3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>B4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>C3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>C4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>D3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>D4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>E3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>E4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>F3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>F4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>G3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>G4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>H3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>H4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>I3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>I4</p>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="flex items-center gap-4 mb-4">
-                                    <div
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>J3</p>
-                                    </div>
-                                    <div
+                                    </button>
+                                    <button
                                         class="selected bg-gray-100 rounded-lg h-[50px] flex items-center justify-center w-[50%]">
                                         <p>J4</p>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right side -->
-                    <div class="w-[50%] p-5 inter">
+                    <div class="w-[100%] md:w-[50%] p-5 inter">
                         <!-- Upper div -->
                         <div class="w-full bg-gray-100 rounded-2xl p-7">
                             <div
-                                class="flex justify-between gap-32 font-bold border-b-2 border-dashed border-gray-300 mb-5 pb-5">
+                                class="flex justify-between font-bold border-b-2 border-dashed border-gray-300 mb-5 pb-5">
                                 <h3>Seat <span id="total-seats" class="bg-[#1DD100] px-2 rounded font-bold"></span></h3>
                                 <h3>Class</h3>
                                 <h3>Price</h3>
@@ -514,10 +518,10 @@
                                 <h3 id="price"></h3>
                             </div>
 
-                            <div class="flex justify-between gap-32 mb-4">
+                            <div class="flex justify-between mb-4">
                                 <h3 id="seat-number-container"></h3>
-                                <h3>Economy</h3>
-                                <h3>550</h3>
+                                <h3></h3>
+                                <h3></h3>
                             </div>
 
                             <div class="flex justify-between font-semibold">
@@ -559,7 +563,7 @@
 
                             <!-- Button is will appear once user input their phone number correctly -->
                             <button id="next-button" onclick="my_modal_5.showModal()"
-                                class="btn btn bg-[#1DD100] text-white w-full text-lg" disabled>Next</button>
+                                class="btn btn bg-[#1DD100] text-white w-full text-lg">Next</button>
                             <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                                 <div class="modal-box flex flex-col justify-center text-center">
                                     <div class="w-full flex justify-center mb-5"><img class=""
