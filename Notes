@@ -1,0 +1,10 @@
+# Ticketing-Functionalities
+
+6. On Clicking Seats All the Functionalities are working perfectly
+
+ → Selected seat is adding on the booked seat container - not okay
+
+ → Total Price is calculating perfectly - not okay
+ → Grand Total Price is calculating perfectly - not okay
+9. For Valid Coupon code, Functionalities are working perfectly → not okay
+10. Show an alert For invalid Coupon code and Nothing will be changed → not okay
