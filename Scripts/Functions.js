@@ -1,37 +1,82 @@
 /* --------------------------------New code start-------------------------------- */
 
+
+interactive();
+setInnerText('total-seats', 0);
+setInnerText('total-price', 0);
+// Function for calling the logics
+function interactive(){
+
+    getUserClick();
+
+
+}
+
+
+
 // Function for getting the user click
 function getUserClick(){
     const elements = document.querySelectorAll('.selected');
-
     elements.forEach(element =>{
         element.addEventListener('click', function(){
             const elementText = element.innerText;
-            console.log(elementText);
             setBgColor(element);
             element.setAttribute('disabled', 'disabled');  // to disable a button after clicking once
+            getSelectedSeats(elementText)
+
         });
     });
 };
 
-getUserClick()
 
 // Function for setting the background of an element or with any value that will be passed
 function setBgColor(value){
     if(getUserClick){
         value.style.backgroundColor = 'lightGreen';
-    }
+    };
+};
+
+
+// Get users selected seat number in the billing section
+function getSelectedSeats(value){
+    const container = document.getElementById("selected-seat-container");
+    
+    const ul = document.createElement('ul');
+    ul.style.display = 'flex';
+    ul.style.justifyContent = 'space-between';
+    const li = document.createElement('li');
+    const li2 = document.createElement('li');
+
+    const price = 550;
+    const li3 = document.createElement('li');
+    li3.innerText = price;
+
+    li.innerText = value;
+    li2.innerText = "Economy";
+
+    ul.appendChild(li);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    container.appendChild(ul);
+};
+
+
+
+// Set dynamic inner text
+function setInnerText(elementid, value){
+    const element = document.getElementById(elementid);
+    element.innerText = value;
 }
 
 
 
 
+// Function for total cost
+function totalCost(value1, value2){
+    const cost = value1 + value2;
 
-
-
-
-
-
+    return cost;
+}
 
 
 
