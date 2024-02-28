@@ -2,14 +2,12 @@
 
 
 interactive();
-setInnerText('total-seats', 0);
 setInnerText('total-price', 0);
+
 // Function for calling the logics
 function interactive(){
 
     getUserClick();
-
-
 }
 
 
@@ -24,6 +22,20 @@ function getUserClick(){
             element.setAttribute('disabled', 'disabled');  // to disable a button after clicking once
             getSelectedSeats(elementText)
 
+
+            
+            const elem = document.getElementById('total-seats');
+            const text = elem.innerText;
+            let convert = parseInt(text);
+            convert = convert + 1;
+            elem.innerText = convert;
+
+
+            const elem2 = document.getElementById('Available-seats');
+            const text2 = elem2.innerText;
+            let convert2 = parseInt(text2);
+            convert2 = convert2 - 1;
+            elem2.innerText = convert2;
         });
     });
 };
@@ -51,13 +63,15 @@ function getSelectedSeats(value){
     const li3 = document.createElement('li');
     li3.innerText = price;
 
+    
     li.innerText = value;
     li2.innerText = "Economy";
-
+    
     ul.appendChild(li);
     ul.appendChild(li2);
     ul.appendChild(li3);
     container.appendChild(ul);
+
 };
 
 
@@ -78,7 +92,14 @@ function totalCost(value1, value2){
     return cost;
 }
 
+// get inner text
+function getInnerText(elementid){
+    const element = document.getElementById(elementid);
+    const text = element.innerText;
+    const convert = parseInt(text);
 
+    console.log(convert);
+}
 
 
 
