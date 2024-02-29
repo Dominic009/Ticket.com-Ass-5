@@ -23,19 +23,33 @@ function getUserClick(){
             getSelectedSeats(elementText)
 
 
-            
+            //Total seats ++
             const elem = document.getElementById('total-seats');
             const text = elem.innerText;
             let convert = parseInt(text);
             convert = convert + 1;
             elem.innerText = convert;
 
-
+            //Available seats --
             const elem2 = document.getElementById('Available-seats');
             const text2 = elem2.innerText;
             let convert2 = parseInt(text2);
             convert2 = convert2 - 1;
             elem2.innerText = convert2;
+
+            //Total price
+            const price = 550;
+            const totalPriceContainer = document.getElementById('total-price');
+            const text3 =  totalPriceContainer.innerText;
+            const converted = parseInt(text3);
+            const totalPrice = converted + price;
+            totalPriceContainer.innerText = totalPrice;
+            
+            //Grand total
+            const gTotal = document.getElementById('grand-total');
+            const text4 = gTotal.innerText;
+            const converted2 = parseInt(text4);
+            gTotal.innerText = totalPrice;
         });
     });
 };
