@@ -1,250 +1,159 @@
-/* --------------------------------New code start-------------------------------- */
+/* ------------------------------ Clean Code Start ------------------------------ */
 
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});
 
-interactive();
-setInnerText('total-price', 0);
+const MAX_SELECTABLE_SEATS = 4;
+const SEAT_PRICE = 550;
+let selectedSeatsCount = 0;
 
-// Function for calling the logics
-function interactive(){
+const coupons = {
+  NEW15: 15, // 15% discount
+  COUPLE20: 20, // 20% discount
+};
 
-    getUserClick();
+function init() {
+  setInnerText("total-price", 0);
+  setInnerText("grand-total", 0);
+  setInnerText("total-seats", 0);
+  setInnerText("Available-seats", 40); // example value
+  attachSeatClickListeners();
+  handlePhoneValidation();
 }
 
+// Attach event listeners to all seat buttons
+function attachSeatClickListeners() {
+  const seats = document.querySelectorAll(".selected");
 
+  seats.forEach((seat) => {
+    seat.addEventListener("click", () => {
+      if (selectedSeatsCount >= MAX_SELECTABLE_SEATS) {
+        alert(`You can select maximum ${MAX_SELECTABLE_SEATS} seats.`);
+        return;
+      }
 
-// Function for getting the user click
-function getUserClick(){
-    const elements = document.querySelectorAll('.selected');
-    elements.forEach(element =>{
-        element.addEventListener('click', function(){
-            const elementText = element.innerText;
-            setBgColor(element);
-            element.setAttribute('disabled', 'disabled');  // to disable a button after clicking once
-            getSelectedSeats(elementText)
-
-
-            //Total seats ++
-            const elem = document.getElementById('total-seats');
-            const text = elem.innerText;
-            let convert = parseInt(text);
-            convert = convert + 1;
-            elem.innerText = convert;
-
-            //Available seats --
-            const elem2 = document.getElementById('Available-seats');
-            const text2 = elem2.innerText;
-            let convert2 = parseInt(text2);
-            convert2 = convert2 - 1;
-            elem2.innerText = convert2;
-
-            //Total price
-            const price = 550;
-            const totalPriceContainer = document.getElementById('total-price');
-            const text3 =  totalPriceContainer.innerText;
-            const converted = parseInt(text3);
-            const totalPrice = converted + price;
-            totalPriceContainer.innerText = totalPrice;
-            
-            //Grand total
-            const gTotal = document.getElementById('grand-total');
-            const text4 = gTotal.innerText;
-            const converted2 = parseInt(text4);
-            gTotal.innerText = totalPrice;
-        });
+      const seatNumber = seat.innerText;
+      seat.setAttribute("disabled", "disabled");
+      seat.classList.add("bg-green-400"); // better than using `style.backgroundColor`
+      updateSelectedSeats(seatNumber);
+      updateSeatCount();
+      updateTotalPrice();
+      updateGrandTotal();
     });
-};
-
-
-// Function for setting the background of an element or with any value that will be passed
-function setBgColor(value){
-    if(getUserClick){
-        value.style.backgroundColor = 'lightGreen';
-    };
-};
-
-
-// Get users selected seat number in the billing section
-function getSelectedSeats(value){
-    const container = document.getElementById("selected-seat-container");
-    
-    const ul = document.createElement('ul');
-    ul.style.display = 'flex';
-    ul.style.justifyContent = 'space-between';
-    const li = document.createElement('li');
-    const li2 = document.createElement('li');
-
-    const price = 550;
-    const li3 = document.createElement('li');
-    li3.innerText = price;
-
-    
-    li.innerText = value;
-    li2.innerText = "Economy";
-    
-    ul.appendChild(li);
-    ul.appendChild(li2);
-    ul.appendChild(li3);
-    container.appendChild(ul);
-
-};
-
-
-
-// Set dynamic inner text
-function setInnerText(elementid, value){
-    const element = document.getElementById(elementid);
-    element.innerText = value;
+  });
 }
 
+// Update selected seats list in billing section
+function updateSelectedSeats(seatNumber) {
+  const container = document.getElementById("selected-seat-container");
 
+  const ul = document.createElement("ul");
+  ul.className = "flex justify-between text-sm text-gray-600 mb-2";
 
+  const liSeat = document.createElement("li");
+  const liClass = document.createElement("li");
+  const liPrice = document.createElement("li");
 
-// Function for total cost
-function totalCost(value1, value2){
-    const cost = value1 + value2;
+  liSeat.innerText = seatNumber;
+  liClass.innerText = "Economy";
+  liPrice.innerText = SEAT_PRICE;
 
-    return cost;
+  ul.appendChild(liSeat);
+  ul.appendChild(liClass);
+  ul.appendChild(liPrice);
+
+  container.appendChild(ul);
 }
 
-// get inner text
-function getInnerText(elementid){
-    const element = document.getElementById(elementid);
-    const text = element.innerText;
-    const convert = parseInt(text);
+// Update seat counts
+function updateSeatCount() {
+  selectedSeatsCount += 1;
 
-    console.log(convert);
+  const totalElem = document.getElementById("total-seats");
+  const availableElem = document.getElementById("Available-seats");
+
+  totalElem.innerText = selectedSeatsCount;
+  availableElem.innerText = parseInt(availableElem.innerText) - 1;
 }
 
+// Update total price
+function updateTotalPrice() {
+  const currentTotal = parseInt(
+    document.getElementById("total-price").innerText
+  );
+  const newTotal = currentTotal + SEAT_PRICE;
+  setInnerText("total-price", newTotal);
+}
 
+// Set grand total
+function updateGrandTotal() {
+  const grandTotalElem = document.getElementById("grand-total");
+  const currentPrice = parseInt(
+    document.getElementById("total-price").innerText
+  );
+  grandTotalElem.innerText = currentPrice;
+}
 
+// Utility: Set innerText by ID
+function setInnerText(id, value) {
+  document.getElementById(id).innerText = value;
+}
 
+// Phone number validation + seat selection check for enabling "Next" button
+function handlePhoneValidation() {
+  const input = document.getElementById("phone-number");
+  const button = document.getElementById("next-button");
 
+  // Ensure it's disabled by default
+  button.setAttribute("disabled", "disabled");
 
+  input.addEventListener("input", () => {
+    validateForm();
+  });
+}
 
+// Call this after every seat selection
+function validateForm() {
+  const phone = document.getElementById("phone-number").value;
+  const button = document.getElementById("next-button");
 
+  const isPhoneValid = /^\d{11}$/.test(phone);
+  const hasSelectedSeats = selectedSeatsCount > 0;
 
+  if (isPhoneValid && hasSelectedSeats) {
+    button.removeAttribute("disabled");
+  } else {
+    button.setAttribute("disabled", "disabled");
+  }
+}
 
+let couponApplied = false;
 
+function applyCoupon() {
+  const couponInput = document.getElementById("coupon-input");
+  const couponCode = couponInput.value.trim().toUpperCase();
+  const grandTotalElem = document.getElementById("grand-total");
+  const totalPriceElem = document.getElementById("total-price");
 
+  if (couponApplied) {
+    alert("You have already applied a coupon.");
+    return;
+  }
 
-/* --------------------------------New code end-------------------------------- */
+  if (coupons[couponCode]) {
+    const discountPercent = coupons[couponCode];
+    const totalPrice = parseInt(totalPriceElem.innerText);
 
+    const discountAmount = Math.floor((discountPercent / 100) * totalPrice);
+    const discountedTotal = totalPrice - discountAmount;
 
+    grandTotalElem.innerText = discountedTotal;
 
+    couponApplied = true;
 
-
-
-
-// Navigation bar "Bus" button is functional
-// Total seats update
-// User can not select more than 4 seats
-// Seat quantity update in billing section
-// Dynamically added seat details
-// User have to provide their details (espcially correct phone number) to be able to click the "NEXT" button
-
-
-// function seatSelection(){
-// const seats = document.querySelectorAll('.selected');
-// const totalSeats = document.getElementById('total-seats');
-
-
-// for (let i = 0; i < seats.length; i++){
-//     let seat = seats[i];
-    
-//     seat.addEventListener('click', function selectSeat(e){
-
-//         const text = e.target.parentNode.childNodes[1].innerText;
-//         const selectedContainer = document.getElementById('seat-number-container');
-//         selectedContainer.innerText = text;
-
-
-//         let countOfSeats = parseInt(totalSeats.innerText) || 0;
-
-//         const id = document.getElementById('Available-seats');
-//         let availableSeats = getInnerText('Available-seats');
-//         availableSeats--;
-
-//         id.innerText = availableSeats;
-
-        
-//         if(countOfSeats < 4){
-//             seat.style.backgroundColor = '#1DD100';
-//             countOfSeats++;
-//             totalSeats.innerText = countOfSeats;
-//             getQuery(seat, 'p');
-//         }
-//         else{
-//           return seat.removeEventListener('click', selectSeat);
-//         }
-        
-//     })
-// }
-// }
-
-
-
-// function getInnerText(elementid){
-//     const text = document.getElementById(elementid).innerText;
-//     const stringToNumber = parseInt(text);
-
-//     return stringToNumber;
-// }
-
-// function setTextValue(elementid, value){
-//     const element = document.getElementById(elementid);
-//     element.innerText = value;
-// }
-
-// function getClassInnerText(elementTag){
-//     const element = seat.querySelector(elementTag).innerText;
-//     console.log(element)
-// }
-
-
-
-// function getQuery(element, elementTag){
-//    const get = element.querySelector(elementTag).innerText;
-   
-//    const getSeatNumber = document.getElementById('seat-number');
-//    const text = getSeatNumber.innerText;
-//    console.log(text)
-//    text.innerText = get;
-// }
-
-
-
-// //Phone number validation to make next button work
-
-// const inputNumber = document.getElementById('phone-number');
-// const button = document.getElementById('next-button');
-
-// function validateNumber(number){
-//     let phoneRegex = /^\d{11}$/;
-//    return phoneRegex.test(number)
-
-// }
-
-//     inputNumber.addEventListener('input', function(){
-//         let phoneNumber = inputNumber.value;
-//         const isValidNumber = validateNumber(phoneNumber);
-
-//         if(isValidNumber){
-//             button.removeAttribute('disabled');
-//         }else{
-//             button.setAttribute('disabled', 'disabled');
-//         }
-
-//     })
-
-
-//     function removeClass(elementid, value){
-//         const element = document.getElementById(elementid);
-//         element.classList.remove(value);
-//     };
-
-
-// validateNumber();
-// seatSelection();
-// setTextValue('total-seats', 0);
-// setTextValue('total-price', 0);
-// setTextValue('grand-total', 0);
+    alert(`✅ Coupon applied! You got ${discountPercent}% off.`);
+  } else {
+    alert("❌ Invalid coupon code.");
+  }
+}
